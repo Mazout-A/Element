@@ -50,7 +50,7 @@ scene.add(map);
 // A. Chargement de l'image
 const textureLoader = new THREE.TextureLoader();
 // Assure-toi que "red.png" est bien à côté de ton fichier index.html
-const persoTexture = textureLoader.load("Red2.png");
+const persoTexture = textureLoader.load("scout.png");
 
 // B. Réglage Pixel Art (Pour que ce soit net)
 persoTexture.magFilter = THREE.NearestFilter;
@@ -69,6 +69,7 @@ persoTexture.offset.y = 0;
 const geometry = new THREE.PlaneGeometry(32, 32);
 const material = new THREE.MeshBasicMaterial({
   map: persoTexture, // On met l'image
+  transparance: false,
   side: THREE.DoubleSide, // Visible des deux côtés
 });
 
